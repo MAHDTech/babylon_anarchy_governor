@@ -2,7 +2,6 @@
 - name: Run deployer update {{ anarchy_subject_name }}
   vars:
     new_subject_state: updating
-    # NOTE: used bracket notation to avoid public attribute collision with 'update'
     tower_job_template_playbook: >-
       {{ vars['anarchy_governor']['vars']['job_vars']['__meta__']['deployer']['entry_points']['update']
        | default(vars.anarchy_governor.vars.job_vars.__meta__.deployer.entry_point)
