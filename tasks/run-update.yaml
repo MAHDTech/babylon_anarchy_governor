@@ -3,9 +3,9 @@
   vars:
     new_subject_state: updating
     tower_job_template_playbook: >-
-      {{ vars.anarchy_governor.vars.job_vars.__meta__.deployer.entry_points.update
+      {{ vars['anarchy_governor']['vars']['job_vars']['__meta__']['deployer']['entry_points']['update']
        | default(vars.anarchy_governor.vars.job_vars.__meta__.deployer.entry_point)
-       | default('ansible/lifecycle_entry_point.yml') }}
+       | default('ansible/update.yml') }}
     tower_job_extra_vars: >-
       {{ vars.anarchy_subject.vars.job_vars | default({})
        | combine(vars.anarchy_governor.vars.job_vars, recursive=True)
